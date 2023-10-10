@@ -1,0 +1,19 @@
+﻿<table id="userTable">
+    <thead>
+        <tr>
+            <th><a href="?sort=FullName">ПІБ</a></th>
+            <th><a href="?sort=Age">Вік</a></th>
+            <th><a href="?sort=RegionalCenter">Обласний центр</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var users in Model)
+        {
+            <tr @if (User.Identity.Name == users.Email) { <text> class="highlighted" style="background-color: #ffff99" </text> }>
+                <td>@users.FullName</td>
+                <td>@users.Age</td>
+                <td>@users.RegionalCenter</td>
+            </tr>
+        }
+    </tbody>
+</table>
